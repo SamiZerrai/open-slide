@@ -10,13 +10,17 @@ import { auth } from '../firebase';
 
 const AuthContext = createContext();
 
+export function useAuthContexts() {
+  return useContext(AuthContext);
+}
+
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState({});
 
   const googleSignIn = () => {
     const provider = new GoogleAuthProvider();
-    // signInWithPopup(auth, provider);
-    signInWithRedirect(auth, provider)
+    signInWithPopup(auth, provider);
+    // signInWithRedirect(auth, provider)
   };
 
   const logOut = () => {

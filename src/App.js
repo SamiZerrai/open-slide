@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import NewPresentation from './pages/NewPresentation';
@@ -6,10 +6,9 @@ import { AuthContextProvider } from './context/AuthContext';
 import Home from './pages/Home';
 import Signin from './pages/Signin';
 import Protected from './components/Protected';
-import { initDB } from 'react-indexed-db';
 import EditPresentation from './pages/EditPresentation';
 import ViewPresentation from './pages/ViewPresentation';
-import { OnlineStatusProvider } from "./services/useOnlineStatus";
+import { OnlineStatusProvider } from "./context/useOnlineStatus";
 
 function App() {
   return (

@@ -31,7 +31,7 @@ const ViewPresentation = () => {
 
   return (
     <Fragment>
-      {loader == false ?
+      {loader === false ?
         <Impress fallbackMessage={<p>Sorry, your <b>device or browser</b> couldn't support well.</p>}>
           {presentation.slides.map((slide, index) => {
             return (

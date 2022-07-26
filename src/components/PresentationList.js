@@ -2,7 +2,7 @@ import React, {Fragment, useEffect, useState} from 'react';
 import PresentationDataService from '../services/presentation.services';
 import {setRessources, getRessources} from '../DBConfig';
 import { Link } from 'react-router-dom';
-import {useOnlineStatus} from '../services/useOnlineStatus'
+import {useOnlineStatus} from '../context/useOnlineStatus';
 
 const PresentationList = () => {
     const [presentations, setPresentations] = useState([]);
@@ -38,11 +38,11 @@ const PresentationList = () => {
 
   return (
     <Fragment>
-        {loading == false ? 
+        {loading === false ? 
             <div className="m-8 relative">
                 {presentations.map((presentation, index) => {
                     return (
-                        <div key={index} className="w-full flex space-x-4 m-4 shadow-md rounded-md dark:bg-gray-900">
+                        <div key={index} className="w-full flex space-x-4 m-4 shadow-md rounded-md">
                             <div className="flex flex-col justify-between p-4 leading-normal">
                                 <span className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{presentation.title}</span>
                                 <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">nombre de slides: {presentation.slides.length}</p>

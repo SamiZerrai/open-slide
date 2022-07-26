@@ -54,7 +54,7 @@ const EditPresentation = () => {
 
   return (
     <Fragment>
-      {loader == false?
+      {loader === false?
         <div>
           <h1 className='text-center text-3xl font-bold py-8'>Edit Presentation</h1>
           <div className="mb-6">
