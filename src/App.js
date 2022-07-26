@@ -9,8 +9,10 @@ import Protected from './components/Protected';
 import EditPresentation from './pages/EditPresentation';
 import ViewPresentation from './pages/ViewPresentation';
 import { OnlineStatusProvider } from "./context/useOnlineStatus";
+import PresentationList from './pages/PresentationList';
 
 function App() {
+
   return (
       <OnlineStatusProvider>
         <AuthContextProvider>
@@ -20,6 +22,7 @@ function App() {
               <Route path='/' element={<Home />} />
               <Route path='/signin' element={<Signin />} />
               <Route path='/new-presentation' element={<NewPresentation />} />
+              <Route path='/list-presentations' element={<PresentationList />} />
               <Route path='/edit-presentation/:id' element={<EditPresentation />} />
               <Route path='/view-presentation/:id' element={<ViewPresentation />} />
               <Route
