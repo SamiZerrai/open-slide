@@ -1,11 +1,12 @@
 import React, {Fragment, useEffect, useState} from 'react';
 import PresentationDataService from '../services/presentation.services';
-import {setRessources, getRessources} from '../DBConfig';
+import {setRessources, getRessources, unsetRessource} from '../DBConfig';
 import { Link } from 'react-router-dom';
 import {useOnlineStatus} from '../context/useOnlineStatus';
 
 const PresentationList = () => {
     const [presentations, setPresentations] = useState([]);
+    const [presentationsLocal, setPresentationsLocal] = useState([]);
     const [loading, setLoading] = useState(true);
     const isOnline = useOnlineStatus();
 
@@ -25,6 +26,24 @@ const PresentationList = () => {
         setRessources(presentations);
     }, [presentations]);
 
+    useEffect(() => {
+        if (isOnline) {
+            getRessources().then(data => {
+                setPresentationsLocal(data);
+            });
+            presentationsLocal.forEach(presentation => {
+                if (!presentations.find(p => p.id === presentation.id)) {
+                    const save = presentation;
+                    const deletePresentation = presentation.id;
+                    console.log(deletePresentation);
+                    delete save.id;
+                    unsetRessource(deletePresentation);
+                    PresentationDataService.addPresentations(save);
+                }
+            });
+        }
+    }, [isOnline]);
+
     const getPresentations = async () => {
         const data = await PresentationDataService.getAllPresentations();
         setPresentations(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
@@ -33,6 +52,7 @@ const PresentationList = () => {
 
     const deletePresentation = async (id) => {
         await PresentationDataService.deletePresentation(id);
+        unsetRessource(id);
         getPresentations();
     }
 

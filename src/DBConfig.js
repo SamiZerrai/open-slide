@@ -42,3 +42,8 @@ export async function getRessource(id) {
   const db = await initDB();
   return db.getFromIndex(PRESENTATION_STORE, "id", id);
 }
+
+export async function unsetRessource(id) {
+  const db = await initDB();
+  await db.delete(PRESENTATION_STORE, id);
+}
