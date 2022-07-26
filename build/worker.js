@@ -1,5 +1,5 @@
 //name of your app
-const CACHE_NAME = 'pwa-grocery-list';
+const CACHE_NAME = 'open-slide';
 //include all routes used in app
 const urlsToCache = ['/', '/purchased'];
 
@@ -29,7 +29,7 @@ self.addEventListener('fetch', (event) => {
 
 // Update a service worker
 self.addEventListener('activate', (event) => {
-  var cacheWhitelist = ['pwa-grocery-list'];
+  var cacheWhitelist = ['popen-slide'];
   event.waitUntil(
     caches.keys().then((cacheNames) => {
       return Promise.all(

@@ -1,7 +1,7 @@
 //name of your app
 const CACHE_NAME = 'open-slide';
 //include all routes used in app
-const urlsToCache = ['/', '/purchased'];
+const urlsToCache = ['/'];
 
 // Install a service worker
 self.addEventListener('install', (event) => {

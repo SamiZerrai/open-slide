@@ -44,11 +44,11 @@ const PresentationList = () => {
                     return (
                         <div key={index} className="w-full flex space-x-4 m-4 shadow-md rounded-md">
                             <div className="flex flex-col justify-between p-4 leading-normal">
-                                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{presentation.title}</h5>
+                                <span className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{presentation.title}</span>
                                 <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">nombre de slides: {presentation.slides.length}</p>
                                 <div className="flex items-right">
-                                    <Link to={`/edit-presentation/${presentation.id}`} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Edit</Link>
-                                    <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full" onClick={() => deletePresentation(presentation.id)}>Delete</button>
+                                    <Link to={`/edit-presentation/${presentation.id}`} className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Edit</Link>
+                                    <button className="bg-red-600 hover:bg-red-500 text-white font-bold py-2 px-4 rounded-full" onClick={() => deletePresentation(presentation.id)}>Delete</button>
                                 </div>
                             </div>
                         </div>
