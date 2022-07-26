@@ -56,13 +56,14 @@ const EditPresentation = () => {
     <Fragment>
       {loader === false?
         <div>
+          <Link to={`/`} className="m-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Retour</Link>
           <h1 className='text-center text-3xl font-bold py-8'>Edit Presentation</h1>
           <div className="mb-6">
-            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+            <label className="m-4 block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
               Presentation title :
             </label>
             <input type="text" id="title" placeholder='title'
-              className="bg-light-50 border border-light-300 text-dark-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 light:bg-gray-700 light:border-gray-600 light:placeholder-gray-400 dark:text-dark dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="m-4 bg-light-50 border border-light-300 text-dark-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 light:bg-gray-700 light:border-gray-600 light:placeholder-gray-400 dark:text-dark dark:focus:ring-blue-500 dark:focus:border-blue-500"
               value={presentation.title}></input>
           </div>
           <div className="overflow-x-auto flex p-4 bg-slate-200 m-4 rounded-md h-48">
@@ -78,7 +79,7 @@ const EditPresentation = () => {
           </div>
           <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-4">
             Ajouter une slide</button>
-            <Link to={`/view-presentation/${currentPresentationId}`} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Voir</Link>
+            <Link to={`/view-presentation/${currentPresentationId}`} className="bg-green-700 hover:bg-green-500 text-white font-bold py-2 px-4 rounded-full">Voir</Link>
           <div style={{ width: 500, height: 300 }}>
             <div ref={quillRef} />
           </div>

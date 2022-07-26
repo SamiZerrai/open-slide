@@ -1,5 +1,6 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { Impress, Step } from 'react-impressjs';
+import { Link } from 'react-router-dom';
 import PresentationDataService from '../services/presentation.services';
 import parse from 'html-react-parser';
 import {getRessource} from '../DBConfig';
@@ -31,6 +32,7 @@ const ViewPresentation = () => {
 
   return (
     <Fragment>
+      <Link to={`/edit-presentation/${currentPresentationId}`} className="m-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Retour</Link>
       {loader === false ?
         <Impress fallbackMessage={<p>Sorry, your <b>device or browser</b> couldn't support well.</p>}>
           {presentation.slides.map((slide, index) => {

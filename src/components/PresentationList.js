@@ -67,8 +67,9 @@ const PresentationList = () => {
                                 <span className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{presentation.title}</span>
                                 <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">nombre de slides: {presentation.slides.length}</p>
                                 <div className="flex items-right">
-                                    <Link to={`/edit-presentation/${presentation.id}`} className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Edit</Link>
-                                    <button className="bg-red-600 hover:bg-red-500 text-white font-bold py-2 px-4 rounded-full" onClick={() => deletePresentation(presentation.id)}>Delete</button>
+                                    <Link to={`/edit-presentation/${presentation.id}`} className="m-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Edit</Link>
+                                    <Link to={`/view-presentation/${presentation.id}`} className="m-2 bg-green-700 hover:bg-green-500 text-white font-bold py-2 px-4 rounded-full">Voir</Link>
+                                    <button className="m-2 bg-red-600 hover:bg-red-500 text-white font-bold py-2 px-4 rounded-full" onClick={() => deletePresentation(presentation.id)}>Delete</button>
                                 </div>
                             </div>
                         </div>
