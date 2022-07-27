@@ -10,7 +10,7 @@ const Navbar = () => {
 
   const handleSignOut = async () => {
     try {
-      await logOut()
+      await logOut();
     } catch (error) {
       console.log(error)
     }
@@ -25,7 +25,7 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    if (user != null) {
+    if (user == null) {
       navigate('/');
     }
   }, [user]);

@@ -60,6 +60,7 @@ const PresentationList = () => {
     <Fragment>
         {loading === false ? 
             <div className="m-8 relative">
+                <Link className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded right-0" to="/new-presentation">✚ New Presentation</Link>
                 {presentations.map((presentation, index) => {
                     return (
                         <div key={index} className="w-full flex space-x-4 m-4 shadow-md rounded-md">

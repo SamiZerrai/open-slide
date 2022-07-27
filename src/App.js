@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Protected from './components/Protected';
 import EditPresentation from './pages/EditPresentation';
 import ViewPresentation from './pages/ViewPresentation';
+import PresentationList from './components/PresentationList';
 import { OnlineStatusProvider } from "./context/useOnlineStatus";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
             <Routes>
               <Route path='/' element={<Home />} />
               <Route path='/new-presentation' element={<NewPresentation />} />
+              <Route path='/list-presentation' element={<PresentationList />} />
               <Route path='/edit-presentation/:id' element={<EditPresentation />} />
               <Route path='/view-presentation/:id' element={<ViewPresentation />} />
               <Route
